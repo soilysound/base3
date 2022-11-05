@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@csstools/postcss-is-pseudo-class": "^2.0.7",
+    "@csstools/postcss-nesting-experimental": "^1.1.0",
+    "postcss": "^8.4.18",
+    "postcss-clamp": "^4.1.0",
+    "postcss-inset": "^1.0.0",
+    "postcss-import": "^15.0.0"
+  }
+}

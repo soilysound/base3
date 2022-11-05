@@ -1,0 +1,394 @@
+:root {
+  /* fonts */
+  --base-font: sans-serif;
+  --base-font-size: 1rem;
+  /* https: //royalfig.github.io/fluid-typography-calculator/ 
+    fonts scale between 400 and 896px
+  */
+  /* 14px */
+  --display-100: 0.875rem;
+  /* 16px */
+  --display-200: 1rem;
+  /* 16-18px */
+  --display-300: max(1rem, min((0.8991935483870968rem + 0.4032258064516129vw), 1.125rem));
+  /* 18-20 */
+  --display-400: max(1.125rem, min((1.0241935483870968rem + 0.4032258064516129vw), 1.25rem));
+  /* 20-24 */
+  --display-500: max(1.25rem, min((1.0483870967741935rem + 0.8064516129032258vw), 1.5rem));
+  /* 24-30 */
+  --display-600: max(1.5rem, min((1.1975806451612903rem + 1.2096774193548387vw), 1.875rem));
+  /* 30-40 */
+  --display-700: max(1.875rem, min((1.370967741935484rem + 2.0161290322580645vw), 2.5rem));
+  /* 40-52 */
+  --display-800: max(2.5rem, min((1.8951612903225805rem + 2.4193548387096775vw), 3.25rem));
+  /* 52-70 */
+  --display-900: max(3.25rem, min((2.342741935483871rem + 3.6290322580645156vw), 4.375rem));
+
+  /* line heights */
+  --line-height-100: 1.4;
+  --line-height-200: 1.4;
+  --line-height-300: 1.3;
+  --line-height-400: 1.3;
+  --line-height-500: 1.2;
+  --line-height-600: 1.2;
+  --line-height-700: 1.1;
+  --line-height-800: 1;
+  --line-height-900: 0.9;
+  /* spacing */
+  --gap-100: max(0.25rem, min((0.04838709677419356rem + 0.8064516129032258vw), 0.5rem));
+  --gap-200: max(0.5rem, min((0.29838709677419356rem + 0.8064516129032258vw), 0.75rem));
+  --gap-300: max(0.75rem, min((0.5483870967741935rem + 0.8064516129032258vw), 1rem));
+  --gap-400: max(1rem, min((0.5967741935483871rem + 1.6129032258064515vw), 1.5rem));
+  --gap-500: max(1.5rem, min((1.1975806451612903rem + 1.2096774193548387vw), 1.875rem));
+  --gap-600: max(1.875rem, min((1.370967741935484rem + 2.0161290322580645vw), 2.5rem));
+  --gap-700: max(2.5rem, min((1.8951612903225805rem + 2.4193548387096775vw), 3.25rem));
+  --gap-800: max(3.25rem, min((2.342741935483871rem + 3.6290322580645156vw), 4.375rem));
+  --gap-900: max(4.375rem, min((3.366935483870968rem + 4.032258064516129vw), 5.625rem));
+  /* layout */
+  --site-width-l: 1200px;
+  --site-width: 1024px;
+  --site-width-m: 767px;
+  --site-width-s: 480px;
+  --site-width-xs: 360px;
+  --site-gutter: 1rem;
+
+  /* layers */
+  --layer-below: -1;
+  --layer-base: 0;
+  --layer-ui: 9;
+  --layer-overlay: 99;
+  --layer-top: 99999999999999999999999999;
+
+  /* colors */
+  /* shades */
+  --shade-100: hsl(0, 0%, 100%);
+  --shade-200: hsl(0, 0%, 87.5%);
+  --shade-300: hsl(0, 0%, 75%);
+  --shade-400: hsl(0, 0%, 62.5%);
+  --shade-500: hsl(0, 0%, 50%);
+  --shade-600: hsl(0, 0%, 37.5%);
+  --shade-700: hsl(0, 0%, 25%);
+  --shade-800: hsl(0, 0%, 12.5%);
+  --shade-900: hsl(0, 0%, 0%);
+  --text-color: #222;
+  /* utility */
+  --warning: orange;
+  --alert: red;
+  --breaking: yellow;
+  --breaking-text: black;
+  --success: green;
+  /* opacity */
+  --black-op-75: hsla(0, 0, 0, 70%);
+  --black-op-50: hsla(0, 0, 0, 50%);
+  --black-op-25: hsla(0, 0, 0, 25%);
+  /* brand */
+  --brand-100: red;
+  --brand-200: black;
+}
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+  outline: revert;
+}
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+  word-wrap: break-word;
+  color: var(--text-color);
+  font-family: var(--base-font), sans-serif;
+  font-size: var(--base-font-size);
+  overflow-anchor: none;
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.flex-wrap {
+  --gap: var(--gap-600);
+  --width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: flex-start;
+  width: 100%;
+  max-width: var(--width);
+  gap: var(--gap);
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex-wrap-site-width {
+  --width: var(--site-width);
+}
+.flex-wrap-gutter {
+  --gutter: var(--site-gutter);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+.flex-wrap-gutter-collapse {
+  --gutter-collapse: var(--site-width-s);
+  position: relative;
+  margin-left: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
+  margin-right: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
+}
+.flex-wrap-full-width {
+  min-width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.flex-grid {
+  --basis: 0%;
+  --gap: var(--gap-500);
+  --wrap: wrap;
+  --grow: 1;
+  --collapse: 0;
+  --align: flex-start;
+  --justify: flex-start;
+  --align-children: stretch;
+  display: flex;
+  flex-wrap: var(--wrap);
+  align-content: var(--align);
+  justify-content: var(--justify);
+  gap: var(--gap);
+}
+.flex-grid>* {
+  flex-grow: var(--grow);
+  flex-shrink: 1;
+  flex-basis: calc(var(--basis) - var(--gap));
+  min-width: clamp(var(--min-width, 0px), (var(--collapse) - 100%) * 999, 100% - var(--gap));
+  display: grid;
+  align-items: var(--align-children);
+}
+.flex-grid>*:only-child {
+  flex-basis: var(--basis);
+}
+/* HACK FOR < IOS/SAFARI 14.5, which doesnt support the gap property in flexbox */
+@supports not ((display: full-size-kana) or (translate: 10px) or (content-visibility: auto)) {
+  .flex-grid>* {
+    margin: calc(var(--gap, 1em) / 2);
+  }
+}
+.grid {
+  --basis: auto;
+  --gap: var(--gap-500);
+  --flow: none;
+  display: grid;
+  align-items: stretch;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, minmax(var(--basis), 1fr));
+  grid-auto-flow: var(--flow);
+}
+.grid>* {
+  max-width: 100%;
+}
+.gap-0 {
+  --gap: 0;
+}
+.gap-100 {
+  --gap: var(--gap-100);
+  --collapse: var(--gap-100)
+}
+.gap-200 {
+  --gap: var(--gap-200);
+  --collapse: var(--gap-200)
+}
+.gap-300 {
+  --gap: var(--gap-300);
+  --collapse: var(--gap-300)
+}
+.gap-400 {
+  --gap: var(--gap-400);
+  --collapse: var(--gap-400)
+}
+.gap-500 {
+  --gap: var(--gap-500);
+  --collapse: var(--gap-500)
+}
+.gap-600 {
+  --gap: var(--gap-600);
+  --collapse: var(--gap-600)
+}
+.gap-700 {
+  --gap: var(--gap-700);
+  --collapse: var(--gap-700)
+}
+.gap-800 {
+  --gap: var(--gap-800);
+  --collapse: var(--gap-800)
+}
+.gap-900 {
+  --gap: var(--gap-900);
+  --collapse: var(--gap-900)
+}
+.gap-any {
+  /* pass any (unitless) to and from value for arbitrary gap scaling */
+  --gap-from-px: calc(var(--gap-from) * 1px);
+  --gap-to-px: calc(var(--gap-to) * 1px);
+  --gap-diff: calc(var(--gap-to) - var(--gap-from));
+  gap: var(--gap-200);
+  gap: max(var(--gap-from-px), min(var(--gap-from-px) + (var(--gap-diff) * var(--scaler)), var(--gap-to-px)));
+}
+.collapse-top {
+  --collapse: inherit !important;
+  margin-top: calc(var(--collapse) * -1);
+}
+.collapse-bottom {
+  --collapse: inherit !important;
+  margin-bottom: calc(var(--collapse) * -1);
+}
+.display-50 {
+  font-size: var(--display-50);
+  line-height: var(--line-height-50)
+}
+.display-100 {
+  font-size: var(--display-100);
+  line-height: var(--line-height-100)
+}
+.display-200 {
+  font-size: var(--display-200);
+  line-height: var(--line-height-200)
+}
+.display-300 {
+  font-size: var(--display-300);
+  line-height: var(--line-height-300)
+}
+.display-400 {
+  font-size: var(--display-400);
+  line-height: var(--line-height-400)
+}
+.display-500 {
+  font-size: var(--display-500);
+  line-height: var(--line-height-500)
+}
+.display-600 {
+  font-size: var(--display-600);
+  line-height: var(--line-height-600)
+}
+.display-700 {
+  font-size: var(--display-700);
+  line-height: var(--line-height-700)
+}
+.display-800 {
+  font-size: var(--display-800);
+  line-height: var(--line-height-800)
+}
+.display-900 {
+  font-size: var(--display-900);
+  line-height: var(--line-height-900)
+}
+.display-fixed-25 {
+  font-size: var(--display-fixed-25);
+}
+.display-fixed-50 {
+  font-size: var(--display-fixed-50);
+}
+.display-fixed-100 {
+  font-size: var(--display-fixed-100);
+}
+.display-any {
+  /* pass any (unitless) to and from value for arbitrary font scaling
+    eg scale from 16 - 24px, use: 
+    --size-from: 16; 
+    --size-to: 24 
+  */
+  --size-from-px: calc(var(--size-from) * 1px);
+  --size-to-px: calc(var(--size-to) * 1px);
+  --size-diff: calc(var(--size-to) - var(--size-from));
+  font-size: max(var(--size-from-px), min(var(--size-from-px) + (var(--size-diff) * var(--scaler)), var(--size-to-px)));
+}
+.button {
+  --size: var(--font-size-200);
+  --color: var(--text-color);
+  --color-hover: var(--color);
+  --bg: var(--shade-200);
+  --bg-hover: var(--shade-300);
+  --border-width: 1px;
+  --border-color: red;
+  --border-color: var(--bg-hover);
+  --border-radius: 5px;
+  --padding: 0.5em 0.8em;
+  --display: inline-flex;
+  display: var(--display);
+  gap: calc(var(--size) / 2);
+  align-items: center;
+  width: fit-content;
+  appearance: none;
+  font-size: var(--size);
+  line-height: 1;
+  padding: var(--padding);
+  background-color: var(--bg);
+  color: var(--color);
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+.button:not([disabled]):hover {
+  color: var(--color-hover);
+  background-color: var(--bg-hover);
+}
+.button[disabled] {
+  cursor: default;
+  filter: saturate(0.7) brightness(1.3) contrast(0.6);
+}
+.button[data-size="small"] {
+  --size: var(--font-size-100);
+}
+.button[data-size="large"] {
+  --size: var(--font-size-300);
+}
+.button[data-lozenge] {
+  --border-radius: 2em;
+}
+body p {
+    border: 2px solid green;
+  }
+p {
+  background: green;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px
+}
+div {
+  background: green;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px
+}
