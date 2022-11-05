@@ -8,13 +8,5 @@
 @import './ui/fonts.css';
 @import './ui/buttons.css';
 
-body {
-  & p {
-    border: 2px solid green;
-  }
-}
-
-:is(p, div) {
-  background: green;
-  inset: 0px
-}
+@import './theme/dark-mode.css'
+all and (prefers-color-scheme: dark);

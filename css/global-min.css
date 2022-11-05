@@ -1,6 +1,5 @@
 :root {
   /* fonts */
-  --base-font: sans-serif;
   --base-font-size: 1rem;
   /* https: //royalfig.github.io/fluid-typography-calculator/ 
     fonts scale between 400 and 896px
@@ -70,7 +69,6 @@
   --shade-700: hsl(0, 0%, 25%);
   --shade-800: hsl(0, 0%, 12.5%);
   --shade-900: hsl(0, 0%, 0%);
-  --text-color: #222;
   /* utility */
   --warning: orange;
   --alert: red;
@@ -81,9 +79,24 @@
   --black-op-75: hsla(0, 0, 0, 70%);
   --black-op-50: hsla(0, 0, 0, 50%);
   --black-op-25: hsla(0, 0, 0, 25%);
-  /* brand */
-  --brand-100: red;
-  --brand-200: black;
+
+  /* theme */
+  /* general colors */
+  --text-color: var(--shade-900);
+  --text-color-secondary: var(--shade-700);
+  --text-color-tertiary: var(--shade-700);
+  --page-canvas: var(--shade-100);
+  --page-canvas-shade: var(--shade-200);
+  --component-canvas: var(--shade-100);
+  --component-shade: var(--shade-300);
+  --border-color: var(--shade-300);
+  --border-color-strong: var(--shade-700);
+  /* brand colors */
+  --brand-primary: red;
+  --brand-secondry: blue;
+  --brand-highlight: lightblue;
+  /* brand fonts */
+  --brand-font: 'Sky Text', sans-serif;
 }
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
   all: unset;
@@ -117,7 +130,8 @@ html {
   -webkit-text-size-adjust: none;
   word-wrap: break-word;
   color: var(--text-color);
-  font-family: var(--base-font), sans-serif;
+  background-color: var(--page-canvas);
+  font-family: var(--brand-font);
   font-size: var(--base-font-size);
   overflow-anchor: none;
   scroll-behavior: smooth;
@@ -375,20 +389,10 @@ body {
 .button[data-lozenge] {
   --border-radius: 2em;
 }
-body p {
-    border: 2px solid green;
-  }
-p {
-  background: green;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px
+@media all and (prefers-color-scheme: dark) {
+
+:root {
+  --text-color: var(--shade-100);
+  --page-canvas: var(--shade-900);
 }
-div {
-  background: green;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px
 }

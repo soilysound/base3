@@ -4,7 +4,8 @@ html {
   -webkit-text-size-adjust: none;
   word-wrap: break-word;
   color: var(--text-color);
-  font-family: var(--base-font), sans-serif;
+  background-color: var(--page-canvas);
+  font-family: var(--brand-font);
   font-size: var(--base-font-size);
   overflow-anchor: none;
   scroll-behavior: smooth;
