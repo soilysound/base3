@@ -1,9 +1,10 @@
 .button {
-  --size: var(--font-size-200);
+  --size: var(--display-200);
   --color: var(--text-color);
   --color-hover: var(--color);
-  --bg: var(--shade-200);
-  --bg-hover: var(--shade-300);
+  --weight: bold;
+  --bg: var(--brand-primary);
+  --bg-hover: var(--brand-primary);
   --border-width: 1px;
   --border-color: red;
   --border-color: var(--bg-hover);
@@ -16,6 +17,7 @@
   width: fit-content;
   appearance: none;
   font-size: var(--size);
+  font-weight: var(--weight);
   line-height: 1;
   padding: var(--padding);
   background-color: var(--bg);
@@ -38,11 +40,11 @@
 }
 
 .button[data-size="small"] {
-  --size: var(--font-size-100);
+  --size: var(--display-100);
 }
 
 .button[data-size="large"] {
-  --size: var(--font-size-300);
+  --size: var(--display-300);
 }
 
 .button[data-lozenge] {

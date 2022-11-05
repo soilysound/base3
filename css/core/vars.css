@@ -75,6 +75,7 @@
   --breaking: yellow;
   --breaking-text: black;
   --success: green;
+  --link-color: rgb(42, 42, 198);
   /* opacity */
   --black-op-75: hsla(0, 0, 0, 70%);
   --black-op-50: hsla(0, 0, 0, 50%);
@@ -92,8 +93,8 @@
   --border-color: var(--shade-300);
   --border-color-strong: var(--shade-700);
   /* brand colors */
-  --brand-primary: red;
-  --brand-secondry: blue;
+  --brand-primary: hotpink;
+  --brand-secondry: yellowgreen;
   --brand-highlight: lightblue;
   /* brand fonts */
   --brand-font: 'Sky Text', sans-serif;

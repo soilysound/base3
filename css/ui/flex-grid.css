@@ -1,5 +1,5 @@
 .flex-grid {
-  --basis: 0%;
+  --basis: 0;
   --gap: var(--gap-500);
   --wrap: wrap;
   --grow: 1;
@@ -9,8 +9,9 @@
   --align-children: stretch;
   display: flex;
   flex-wrap: var(--wrap);
-  align-content: var(--align);
+  align-items: var(--align);
   justify-content: var(--justify);
+  justify-items: var(--justify);
   gap: var(--gap);
 }
 

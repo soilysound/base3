@@ -10,6 +10,7 @@
   <style>
     .cell {
       background-color: pink;
+      padding: var(--gap-300);
     }
   </style>
 </head>
@@ -18,16 +19,18 @@
   <div class="flex-wrap flex-wrap-site-width flex-wrap-gutter">
     <h1 class="display-900">900 - Lorem ipsum dolor sit amet consectetur</h1>
     <h1 class="display-800">800 - Lorem ipsum dolor sit amet consectetur</h1>
-    <h1 class="display-700">700 - Lorem ipsum dolor sit amet consectetur</h1>
+    <h1 class="display-700">700 - <a href="#">Lorem ipsum</a> dolor sit amet consectetur</h1>
     <h2 class="display-600">600 - Lorem ipsum dolor sit amet consectetur</h2>
     <h3 class="display-500">500 - Lorem ipsum dolor sit amet consectetur</h3>
     <h4 class="display-400">400 - Lorem ipsum dolor sit amet consectetur</h4>
     <h5 class="display-300">300 - Lorem ipsum dolor sit amet consectetur</h5>
     <p class="display-200">200 - Lorem ipsum dolor sit amet consectetur</p>
     <p class="display-100">100 - Lorem ipsum dolor sit amet consectetur</p>
-    <button class="button" data-lozenge disabled>Here is a button</button>
-    <button class="button" data-size="small">Here is a button</button>
-    <button class="button" data-size="large">Here is a button</button>
+    <div class="flex-grid gap-100" style="--grow: 0;">
+      <button class="button" data-lozenge disabled>Here is a button</button>
+      <button class="button" data-size="small">Here is a button</button>
+      <button class="button" data-size="large">Here is a button</button>
+    </div>
   </div>
   <div class="flex-wrap flex-wrap-site-width flex-wrap-gutter">
     <div class="flex-grid" style="--basis: 240px">
