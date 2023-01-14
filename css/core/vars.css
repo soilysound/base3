@@ -75,7 +75,7 @@
   --breaking: yellow;
   --breaking-text: black;
   --success: green;
-  --link-color: rgb(42, 42, 198);
+  --link-color: #3157A1;
   /* opacity */
   --black-op-75: hsla(0, 0, 0, 70%);
   --black-op-50: hsla(0, 0, 0, 50%);
