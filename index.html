@@ -8,9 +8,10 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/global.css">
   <style>
-    .cell {
+    .cell,
+    .grid-fixed>* {
       background-color: pink;
-      padding: var(--gap-300);
+      /* padding: var(--gap-300); */
     }
   </style>
 </head>
@@ -26,17 +27,38 @@
     <h5 class="display-300">300 - Lorem ipsum dolor sit amet consectetur</h5>
     <p class="display-200">200 - Lorem ipsum dolor sit amet consectetur</p>
     <p class="display-100">100 - Lorem ipsum dolor sit amet consectetur</p>
-    <div class="flex-grid gap-100" style="--grow: 0;">
+    <div class="grid-flex gap-100" style="--grow: 0;">
       <button class="button" data-lozenge disabled>Here is a button</button>
       <button class="button" data-size="small">Here is a button</button>
       <button class="button" data-size="large">Here is a button</button>
     </div>
   </div>
+  <br>
   <div class="flex-wrap flex-wrap-site-width flex-wrap-gutter">
-    <div class="flex-grid" style="--basis: 240px">
-      <div class="cell">1</div>
-      <div class="cell" style="--basis: 400px">2</div>
+    <div class="grid-flex">
+      <div class="cell" style="--basis: 722px">
+        <div class="grid-flex">
+          <div class="cell" style="--basis: 420px">3</div>
+          <div class="cell" style="--basis: 230px">4</div>
+        </div>
+      </div>
+      <div class="cell" style="--basis: 220px">2</div>
     </div>
+    <br>
+    <div class="grid-auto gap-300" style="--basis: 300px;">
+      <div class="cell">1</div>
+      <div class="cell">2</div>
+      <div class="cell">3</div>
+      <div class="cell">4</div>
+    </div>
+    <br>
+    <div class="grid-fixed">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+    <br>
   </div>
 </body>
 

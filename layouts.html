@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/global.css">
+  <style>
+    .grid-cell {
+      /* background: rgba(255, 192, 203, 0.453); */
+    }
+
+    .box {
+      display: grid;
+      gap: 10px;
+      align-content: center
+    }
+
+    .box img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+    }
+
+    .box h3 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .box .label {
+      font-size: 13px;
+      margin-bottom: -0.5em;
+    }
+
+    .box-large h3 {
+      font-size: 24px;
+    }
+
+    .header {
+      font-size: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    [data-pattern="3/1-with-divider"] {
+      --cell1: 1/18;
+      --cell2: 19/25;
+      --div1: 18;
+    }
+
+    [data-pattern="3/1"] {
+      --cell1: 1/17;
+      --cell2: 17/25;
+    }
+
+    [data-pattern="1/1/1/1-with-divider"] {
+      --cols: 1fr 1px 1fr 1px 1fr 1px 1fr;
+      --div1: 2;
+      --cell1: 1;
+      --cell2: 3;
+      --cell3: 5;
+      --cell4: 7;
+      --divider-height: auto;
+      --divider-width: 1px;
+    }
+
+    @container (max-width: 400px) {
+      [data-pattern="1/1/1/1-with-divider"] {
+        --cols: 1fr;
+        --div1: 1/-1;
+        --cell1: 1/-1;
+        --cell2: 1/-1;
+        --cell3: 1/-1;
+        --cell4: 1/-1;
+        --divider-height: 1px;
+        --divider-width: auto;
+      }
+    }
+
+    @container (min-width: 400px) and (max-width: 600px) {
+      [data-pattern="1/1/1/1-with-divider"] {
+        --cols: 1fr 1px 1fr;
+        --div1: 2;
+        --cell1: 1;
+        --cell2: 3;
+        --cell3: 1;
+        --cell4: 3;
+      }
+    }
+
+    @media all and (max-width: 900px) {
+      [data-pattern="3/1-with-divider"] {
+        --cell1: 1/-1;
+        --cell2: 1/-1;
+        --div1: 1/-1;
+      }
+    }
+
+    @media all and (max-width: 660px) {
+
+      [data-pattern="3/1-with-divider"],
+      [data-pattern="3/1"] {
+        --cols: 1fr;
+        --cell1: 1/-1;
+        --cell2: 1/-1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <br>
+  <br>
+  <div class="flex-wrap flex-wrap-site-width flex-wrap-gutter">
+    <div class="grid-fixed" data-pattern="3/1-with-divider">
+      <div class="grid-cell flex-wrap" style="--gap: var(--gap-400)">
+        <h2 class="header">Latest News</h2>
+        <div class="grid-fixed" data-pattern="3/1">
+          <div class="grid-cell">
+            <div class="box box-large">
+              <img src="https://via.placeholder.com/320x180" alt="">
+              <div class="label">Politics</div>
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            </div>
+          </div>
+          <div class="grid-cell">
+            <div class="grid-auto" style="--basis: 160px">
+              <div class="box">
+                <img src="https://via.placeholder.com/320x180" alt="">
+                <div class="label">Politics</div>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+              </div>
+              <div class="box">
+                <img src="https://via.placeholder.com/320x180" alt="">
+                <div class="label">Politics</div>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="grid-divider"></span>
+      <div class="grid-cell flex-wrap" style="--gap: var(--gap-400); --rows: min-content 1fr">
+        <h2 class="header">Latest News</h2>
+        <div class="grid-fixed" data-pattern="1/1/1/1-with-divider">
+          <div class="grid-cell box">
+            <div class="label">Politics</div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          </div>
+          <span class="grid-divider"></span>
+          <div class="grid-cell box">
+            <div class="label">Politics</div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          </div>
+          <span class="grid-divider"></span>
+          <div class="grid-cell box">
+            <div class="label">Politics</div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          </div>
+          <span class="grid-divider"></span>
+          <div class="grid-cell box">
+            <div class="label">Politics</div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</body>
+
+</html>

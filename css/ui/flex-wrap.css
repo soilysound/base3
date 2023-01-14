@@ -1,9 +1,12 @@
 .flex-wrap {
   --gap: var(--gap-600);
   --width: 100%;
+  --align: start;
+  --rows: auto;
   display: grid;
   grid-template-columns: 100%;
-  align-items: flex-start;
+  grid-template-rows: var(--rows);
+  align-content: var(--align);
   width: 100%;
   max-width: var(--width);
   gap: var(--gap);
