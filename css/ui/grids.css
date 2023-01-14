@@ -61,9 +61,10 @@
 .grid-fixed {
   --gap: var(--gap-400);
   --cols: repeat(12, 1fr 1px);
+  --align: start;
   --divider-color: var(--border-color);
   --divider-width: 1px;
-  --divider-height: auto;
+  --divider-height: 100%;
   --cell1: 1/7;
   --cell2: 7/13;
   --cell3: 13/19;
@@ -71,6 +72,7 @@
   display: grid;
   grid-template-columns: var(--cols);
   grid-template-rows: auto;
+  align-items: var(--align);
   gap: var(--gap);
 }
 
