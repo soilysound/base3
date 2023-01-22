@@ -6,7 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./css/global.css">
+
+  <link rel="stylesheet" href="./css/global-min.css">
+  <script src="https://cdn.jsdelivr.net/npm/container-query-polyfill@1/dist/container-query-polyfill.modern.js">
+  </script>
   <style>
     .grid-cell {
       /* background: rgba(255, 192, 203, 0.453); */
@@ -14,8 +17,8 @@
 
     .box {
       display: grid;
-      gap: 10px;
-      align-content: center
+      gap: 12px;
+      align-content: center;
     }
 
     .box img {
@@ -116,6 +119,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -131,6 +135,8 @@
               <img src="https://via.placeholder.com/320x180" alt="">
               <div class="label">Politics</div>
               <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+
+
             </div>
           </div>
           <div class="grid-cell">

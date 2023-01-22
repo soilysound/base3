@@ -75,7 +75,7 @@
   --breaking: yellow;
   --breaking-text: black;
   --success: green;
-  --link-color: rgb(42, 42, 198);
+  --link-color: #3157A1;
   /* opacity */
   --black-op-75: hsla(0, 0, 0, 70%);
   --black-op-50: hsla(0, 0, 0, 50%);
@@ -162,39 +162,48 @@ a {
   font-weight: normal;
   font-display: fallback;
 }
-.flex-wrap {
+@font-face {
+  font-family: 'Sky Text';
+  src: url('/fonts/sky-medium.woff') format('woff');
+  font-weight: bold;
+  font-display: fallback;
+}
+.wrap {
   --gap: var(--gap-600);
   --width: 100%;
+  --align: start;
+  --rows: auto;
   display: grid;
   grid-template-columns: 100%;
-  align-items: flex-start;
+  grid-template-rows: var(--rows);
+  align-content: var(--align);
   width: 100%;
   max-width: var(--width);
   gap: var(--gap);
   margin-left: auto;
   margin-right: auto;
 }
-.flex-wrap-site-width {
+.wrap-site-width {
   --width: var(--site-width);
 }
-.flex-wrap-gutter {
+.wrap-gutter {
   --gutter: var(--site-gutter);
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
-.flex-wrap-gutter-collapse {
+.wrap-gutter-collapse {
   --gutter-collapse: var(--site-width-s);
   position: relative;
   margin-left: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
   margin-right: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
 }
-.flex-wrap-full-width {
+.wrap-full-width {
   min-width: 100vw;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
-.flex-grid {
+.grid-flex {
   --basis: 0;
   --gap: var(--gap-500);
   --wrap: wrap;
@@ -210,35 +219,85 @@ a {
   justify-items: var(--justify);
   gap: var(--gap);
 }
-.flex-grid>* {
+.grid-flex>* {
   flex-grow: var(--grow);
   flex-shrink: 1;
-  flex-basis: calc(var(--basis) - var(--gap));
+  flex-basis: calc(var(--basis));
   min-width: clamp(var(--min-width, 0px), (var(--collapse) - 100%) * 999, 100% - var(--gap));
   display: grid;
   align-items: var(--align-children);
 }
-.flex-grid>*:only-child {
+.grid-flex>*:only-child {
   flex-basis: var(--basis);
 }
 /* HACK FOR < IOS/SAFARI 14.5, which doesnt support the gap property in flexbox */
 @supports not ((display: full-size-kana) or (translate: 10px) or (content-visibility: auto)) {
-  .flex-grid>* {
+  .grid-flex>* {
     margin: calc(var(--gap, 1em) / 2);
   }
 }
-.grid {
+.grid-auto {
   --basis: auto;
-  --gap: var(--gap-500);
+  --gap: var(--gap-400);
   --flow: none;
+  --align: stretch;
+  --rows: auto;
   display: grid;
-  align-items: stretch;
+  align-items: var(--align);
   gap: var(--gap);
-  grid-template-columns: repeat(auto-fill, minmax(var(--basis), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--basis), 1fr));
+  grid-template-rows: auto;
   grid-auto-flow: var(--flow);
+  height: 100%;
 }
-.grid>* {
+.grid-auto>.grid-cell {
   max-width: 100%;
+}
+.grid-auto>.grid-divider[class] {
+  grid-column: auto;
+}
+.grid-fixed {
+  --gap: var(--gap-400);
+  --cols: repeat(12, 1fr 1px);
+  --align: stretch;
+  --divider-color: var(--border-color);
+  --divider-width: 1px;
+  --divider-height: 100%;
+  --cell1: 1/7;
+  --cell2: 7/13;
+  --cell3: 13/19;
+  --cell4: 19/25;
+  display: grid;
+  grid-template-columns: var(--cols);
+  grid-template-rows: auto;
+  align-items: var(--align);
+  gap: var(--gap);
+}
+.grid-cell {
+  container-type: inline-size;
+}
+.grid-fixed>.grid-cell:nth-of-type(1) {
+  grid-column: var(--cell1);
+}
+.grid-fixed>.grid-cell:nth-of-type(2) {
+  grid-column: var(--cell2);
+}
+.grid-fixed>.grid-cell:nth-of-type(3) {
+  grid-column: var(--cell3);
+}
+.grid-fixed>.grid-cell:nth-of-type(4) {
+  grid-column: var(--cell4);
+}
+.grid-divider {
+  background: var(--divider-color);
+  height: var(--divider-height);
+  width: var(--divider-width);
+}
+.grid-divider:nth-of-type(1) {
+  grid-column: var(--div1);
+}
+.grid-divider:nth-of-type(2) {
+  grid-column: var(--div2);
 }
 .gap-0 {
   --gap: 0;
