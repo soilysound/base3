@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="./css/global-min.css">
+  <link rel="stylesheet" href="./css/global.css">
   <script src="https://cdn.jsdelivr.net/npm/container-query-polyfill@1/dist/container-query-polyfill.modern.js">
   </script>
   <style>
@@ -131,26 +131,75 @@
         <h2 class="header">Latest News</h2>
         <div class="grid-fixed" data-pattern="3/1">
           <div class="grid-cell">
-            <div class="box box-large">
-              <img src="https://via.placeholder.com/320x180" alt="">
-              <div class="label">Politics</div>
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <article class="story">
+              <div class="story-wrap" data-pattern="hero">
+                <div class="story-media">
+                  <picture>
+                    <source srcset="https://via.placeholder.com/320x180" />
+                    <img src="https://via.placeholder.com/320x180" loading="lazy" decoding="async" fetchpriority="high"
+                      alt="Builder.io drag and drop interface" />
+                  </picture>
+                </div>
+                <div class="story-body">
+                  <div class="story-meta">
+                    <div class="story-tag">Breaking</div>
+                    <a href="#" class="story-label">Politics</a>
+                  </div>
+                  <h2 class="story-headline"><a href="#">Lorem ipsum dolor, sit amet consec tetur adipisicing elit.</a>
+                  </h2>
+                  <ul class="story-links list">
+                    <li><a href="">Lorem ipsum dolor, sit amet consec tetur adipisicing elit ></a></li>
+                    <li><a href="">Lorem ipsum dolor, sit amet consec tetur adipisicing elit ></a></li>
+                  </ul>
+                </div>
 
-
-            </div>
+              </div>
+            </article>
           </div>
           <div class="grid-cell">
-            <div class="grid-auto" style="--basis: 160px">
-              <div class="box">
-                <img src="https://via.placeholder.com/320x180" alt="">
-                <div class="label">Politics</div>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              </div>
-              <div class="box">
-                <img src="https://via.placeholder.com/320x180" alt="">
-                <div class="label">Politics</div>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              </div>
+            <div class="grid-auto" style="--basis: 170px">
+              <article class="story" data-pattern="col-to-row">
+                <div class="story-wrap">
+                  <div class="story-media">
+                    <picture>
+                      <source srcset="https://via.placeholder.com/320x180" />
+                      <img src="https://via.placeholder.com/320x180" loading="lazy" decoding="async"
+                        fetchpriority="high" alt="Builder.io drag and drop interface" />
+                    </picture>
+                  </div>
+                  <div class="story-body">
+                    <div class="story-meta">
+                      <div class="story-tag">Breaking</div>
+                      <a href="#" class="story-label">Politics</a>
+                    </div>
+                    <h2 class="story-headline"><a href="#">Lorem ipsum dolor, sit amet consec tetur adipisicing
+                        elit.</a></h2>
+                    <div class="story-links"></div>
+                  </div>
+
+                </div>
+              </article>
+              <article class="story" data-pattern="col-to-row">
+                <div class="story-wrap">
+                  <div class="story-media">
+                    <picture>
+                      <source srcset="https://via.placeholder.com/320x180" />
+                      <img src="https://via.placeholder.com/320x180" loading="lazy" decoding="async"
+                        fetchpriority="high" alt="Builder.io drag and drop interface" />
+                    </picture>
+                  </div>
+                  <div class="story-body">
+                    <div class="story-meta">
+                      <div class="story-tag">Breaking</div>
+                      <a href="#" class="story-label">Politics</a>
+                    </div>
+                    <h2 class="story-headline"><a href="#">Lorem ipsum dolor, sit amet consec tetur adipisicing
+                        elit.</a></h2>
+                    <div class="story-links"></div>
+                  </div>
+
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -159,25 +208,63 @@
       <div class="grid-cell wrap" style="--gap: var(--gap-400); --rows: min-content 1fr">
         <h2 class="header">Most read</h2>
         <div class="grid-fixed" data-pattern="1/1/1/1-with-divider">
-          <div class="grid-cell box">
-            <div class="label">Politics</div>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-          </div>
+          <article class="grid-cell story">
+            <div class="story-wrap">
+              <div class="story-body">
+                <div class="story-meta">
+                  <div class="story-tag">Breaking</div>
+                  <a href="#" class="story-label">Politics</a>
+                </div>
+                <h2 class="story-headline"><a href="#">Lorem ipsum dolor, sit amet consec tetur adipisicing
+                    elit.</a></h2>
+                <div class="story-links"></div>
+              </div>
+
+            </div>
+          </article>
           <span class="grid-divider"></span>
-          <div class="grid-cell box">
-            <div class="label">Politics</div>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-          </div>
+          <article class="grid-cell story">
+            <div class="story-wrap">
+              <div class="story-body">
+                <div class="story-meta">
+                  <div class="story-tag">Breaking</div>
+                  <a href="#" class="story-label">Politics</a>
+                </div>
+                <h2 class="story-headline"><a href="#">Lorem ipsum dolor, sit amet consec tetur adipisicing
+                    elit.</a></h2>
+              </div>
+              <div class="story-links"></div>
+            </div>
+          </article>
           <span class="grid-divider"></span>
-          <div class="grid-cell box">
-            <div class="label">Politics</div>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-          </div>
+          <article class="grid-cell story">
+            <div class="story-wrap">
+              <div class="story-body">
+                <div class="story-meta">
+                  <div class="story-tag">Breaking</div>
+                  <a href="#" class="story-label">Politics</a>
+                </div>
+                <h2 class="story-headline"><a href="#">Lorem ipsum dolor, sit amet consec tetur adipisicing
+                    elit.</a></h2>
+                <div class="story-links"></div>
+              </div>
+
+            </div>
+          </article>
           <span class="grid-divider"></span>
-          <div class="grid-cell box">
-            <div class="label">Politics</div>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-          </div>
+          <article class="grid-cell story">
+            <div class="story-wrap">
+              <div class="story-body">
+                <div class="story-meta">
+                  <div class="story-tag">Breaking</div>
+                  <a href="#" class="story-label">Politics</a>
+                </div>
+                <h2 class="story-headline"><a href="#">Lorem ipsum dolor, sit amet consec tetur adipisicing
+                    elit.</a></h2>
+              </div>
+              <div class="story-links"></div>
+            </div>
+          </article>
         </div>
       </div>
     </div>

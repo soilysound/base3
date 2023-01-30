@@ -9,5 +9,7 @@
 @import './ui/typeography.css';
 @import './ui/buttons.css';
 
+@import './components/story.css';
+
 @import './theme/dark-mode.css'
 all and (prefers-color-scheme: dark);

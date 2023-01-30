@@ -1,4 +1,5 @@
 :root {
   --text-color: var(--shade-100);
   --page-canvas: var(--shade-900);
+  --link-color: #65b7f7;
 }
