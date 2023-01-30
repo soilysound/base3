@@ -7,7 +7,7 @@
   --align-body: center;
   container-type: inline-size;
   display: grid;
-  align-items: center;
+  align-items: start;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -46,6 +46,10 @@
 .story-headline {
   font-size: var(--size);
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .story-headline a {
@@ -94,14 +98,14 @@
 .story-label {
   font-size: 13px;
   font-weight: bold;
-  padding: 3px 4px;
+  padding: 2px 4px;
   text-decoration: none;
 }
 
 .story-tag {
   text-transform: uppercase;
-  background: #aaa;
-  color: white;
+  background: #ffcc00;
+  color: black;
 }
 
 .story-label {
@@ -122,4 +126,12 @@
   display: grid;
   gap: 0.5em;
   line-height: 1.1;
+}
+
+@media (hover:hover) {
+  .list a:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 2px;
+  }
 }

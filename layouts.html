@@ -269,6 +269,19 @@
       </div>
     </div>
   </div>
+  <script type="module">
+    const rss = await fetch('./uk.json');
+    const json = await rss.json();
+    const storys = document.querySelectorAll('.story');
+    storys.forEach((s, index) => {
+      s.querySelector('h2 a').textContent = json.items[index].title;
+      if (s.querySelector('img')) {
+        s.querySelector('img').src = json.items[index].thumbnail.replace('70x70', '768x432')
+
+        s.querySelector('source').srcset = json.items[index].thumbnail.replace('70x70', '768x432')
+      }
+    });
+  </script>
   <br>
   <br>
   <br>

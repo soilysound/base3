@@ -1,0 +1,173 @@
+﻿{
+    "status": "ok",
+    "feed": {
+        "url": "http://feeds.skynews.com/feeds/rss/home.xml",
+        "title": "The Latest News from the UK and Around the World | Sky News",
+        "link": "https://news.sky.com/home",
+        "author": "",
+        "description": "Sky news delivers breaking news, headlines and top stories from business, politics, entertainment and more in the UK and worldwide.",
+        "image": "https://e3.365dm.com/skynews/logo.png"
+    },
+    "items": [
+        {
+            "title": "PM understands British Army is 'in urgent need of recapitalisation' - defence minister",
+            "pubDate": "2023-01-30 12:49:00",
+            "link": "https://news.sky.com/story/rishi-sunak-believes-british-army-is-top-level-fighting-force-despite-us-generals-warning-12799230",
+            "guid": "https://news.sky.com/story/rishi-sunak-believes-british-army-is-top-level-fighting-force-despite-us-generals-warning-12799230",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-armed-forces-tanl_6040971.jpg?20230130132731",
+            "description": "Prime Minister Rishi Sunak and Chancellor Jeremy Hunt understand the army is \"in urgent need of recapitalisation\" and \"there is a budget coming\", a defence minister has said.",
+            "content": "Prime Minister Rishi Sunak and Chancellor Jeremy Hunt understand the army is \"in urgent need of recapitalisation\" and \"there is a budget coming\", a defence minister has said.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-armed-forces-tanl_6040971.jpg?20230130132731",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-armed-forces-tanl_6040971.jpg?20230130132731"
+            },
+            "categories": []
+        },
+        {
+            "title": "Teachers' strike to go ahead after education secretary 'squandered the opportunity' to avoid action",
+            "pubDate": "2023-01-30 15:42:00",
+            "link": "https://news.sky.com/story/teachers-strike-to-go-ahead-after-talks-between-unions-and-government-fail-12799333",
+            "guid": "https://news.sky.com/story/teachers-strike-to-go-ahead-after-talks-between-unions-and-government-fail-12799333",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-school-england_6025264.jpg?20230116022151",
+            "description": "Talks between the education secretary and the teaching unions have failed and the biggest teachers' strike in years will go ahead.",
+            "content": "Talks between the education secretary and the teaching unions have failed and the biggest teachers' strike in years will go ahead.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-school-england_6025264.jpg?20230116022151",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-school-england_6025264.jpg?20230116022151"
+            },
+            "categories": []
+        },
+        {
+            "title": "Firefighters vote to strike after real-terms earnings 'drop by 12%'",
+            "pubDate": "2023-01-30 08:15:00",
+            "link": "https://news.sky.com/story/firefighters-to-strike-for-first-time-since-2003-after-real-terms-earnings-drop-by-12-12799004",
+            "guid": "https://news.sky.com/story/firefighters-to-strike-for-first-time-since-2003-after-real-terms-earnings-drop-by-12-12799004",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/22/07/70x70/skynews-rainham-fire-weather_5839747.jpg?20220719173557",
+            "description": "Firefighters are set to stage strike action in a row over pay after experiencing what they say is a cut in real-terms pay.",
+            "content": "Firefighters are set to stage strike action in a row over pay after experiencing what they say is a cut in real-terms pay.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/22/07/70x70/skynews-rainham-fire-weather_5839747.jpg?20220719173557",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/22/07/70x70/skynews-rainham-fire-weather_5839747.jpg?20220719173557"
+            },
+            "categories": []
+        },
+        {
+            "title": "Woman killed by dogs in Surrey is named",
+            "pubDate": "2023-01-27 07:23:00",
+            "link": "https://news.sky.com/story/surrey-dog-attack-victim-is-named-as-natasha-johnston-12796366",
+            "guid": "https://news.sky.com/story/surrey-dog-attack-victim-is-named-as-natasha-johnston-12796366",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-gravelly-hill-i-police_6022519.jpg?20230113121220",
+            "description": "A woman who was killed by dogs in Surrey has been named.",
+            "content": "A woman who was killed by dogs in Surrey has been named.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-gravelly-hill-i-police_6022519.jpg?20230113121220",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-gravelly-hill-i-police_6022519.jpg?20230113121220"
+            },
+            "categories": []
+        },
+        {
+            "title": "Commissioner removes himself from BBC chairman investigation",
+            "pubDate": "2023-01-30 15:59:00",
+            "link": "https://news.sky.com/story/commissioner-removes-himself-from-investigation-into-appointment-of-bbc-chairman-after-boris-johnson-loan-claims-12799342",
+            "guid": "https://news.sky.com/story/commissioner-removes-himself-from-investigation-into-appointment-of-bbc-chairman-after-boris-johnson-loan-claims-12799342",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-william-shawcross-boris-johnson_6041119.jpg?20230130162824",
+            "description": "The Commissioner for Public Appointments has removed himself from the investigation into the hiring of the BBC's chairman after revealing he had met him \"on previous occasions\".",
+            "content": "The Commissioner for Public Appointments has removed himself from the investigation into the hiring of the BBC's chairman after revealing he had met him \"on previous occasions\".",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-william-shawcross-boris-johnson_6041119.jpg?20230130162824",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-william-shawcross-boris-johnson_6041119.jpg?20230130162824"
+            },
+            "categories": []
+        },
+        {
+            "title": "PM says he acted 'decisively' in sacking Zahawi following tax affairs row",
+            "pubDate": "2023-01-30 10:56:00",
+            "link": "https://news.sky.com/story/rishi-sunak-says-he-acted-decisively-in-sacking-nadhim-zahawi-following-tax-affairs-row-12799132",
+            "guid": "https://news.sky.com/story/rishi-sunak-says-he-acted-decisively-in-sacking-nadhim-zahawi-following-tax-affairs-row-12799132",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-rishi-sunak-teesside_6040822.jpg?20230130115802",
+            "description": "Rishi Sunak has insisited he acted \"decisively\" in sacking Nadhim Zahawi as chairman of the Conservative Party after a row over his tax affairs.",
+            "content": "Rishi Sunak has insisited he acted \"decisively\" in sacking Nadhim Zahawi as chairman of the Conservative Party after a row over his tax affairs.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-rishi-sunak-teesside_6040822.jpg?20230130115802",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-rishi-sunak-teesside_6040822.jpg?20230130115802"
+            },
+            "categories": []
+        },
+        {
+            "title": "Mobile phone of missing dog walker found",
+            "pubDate": "2023-01-30 05:39:00",
+            "link": "https://news.sky.com/story/major-search-for-missing-45-year-old-who-vanished-while-walking-her-dog-in-lancashire-12798948",
+            "guid": "https://news.sky.com/story/major-search-for-missing-45-year-old-who-vanished-while-walking-her-dog-in-lancashire-12798948",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-nicola-bulley-missing_6040440.jpg?20230130051050",
+            "description": "A major search is under way to find a 45-year-old woman from Inskip, Lancashire, who vanished while walking her dog.",
+            "content": "A major search is under way to find a 45-year-old woman from Inskip, Lancashire, who vanished while walking her dog.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-nicola-bulley-missing_6040440.jpg?20230130051050",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-nicola-bulley-missing_6040440.jpg?20230130051050"
+            },
+            "categories": []
+        },
+        {
+            "title": "JD Sports cyber attack may have exposed millions of names, numbers and addresses",
+            "pubDate": "2023-01-30 11:34:00",
+            "link": "https://news.sky.com/story/jd-sports-cyber-attack-may-have-exposed-millions-of-names-numbers-and-addresses-12799171",
+            "guid": "https://news.sky.com/story/jd-sports-cyber-attack-may-have-exposed-millions-of-names-numbers-and-addresses-12799171",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/22/08/70x70/skynews-jd-sports_5851773.jpg?20220801123800",
+            "description": "JD Sports is contacting customers who have been affected by a cyber attack that may have exposed their personal details.",
+            "content": "JD Sports is contacting customers who have been affected by a cyber attack that may have exposed their personal details.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/22/08/70x70/skynews-jd-sports_5851773.jpg?20220801123800",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/22/08/70x70/skynews-jd-sports_5851773.jpg?20220801123800"
+            },
+            "categories": []
+        },
+        {
+            "title": "Suicide bomber kills at least 47 in Pakistan mosque attack",
+            "pubDate": "2023-01-30 09:12:00",
+            "link": "https://news.sky.com/story/suicide-bomber-kills-at-least-17-after-targeting-mosque-in-pakistan-12799052",
+            "guid": "https://news.sky.com/story/suicide-bomber-kills-at-least-17-after-targeting-mosque-in-pakistan-12799052",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-pakistan-peshawar_6040758.jpg?20230130110825",
+            "description": "At least 47 people have been killed and 150 injured after a suicide bomber struck a mosque in Pakistan.",
+            "content": "At least 47 people have been killed and 150 injured after a suicide bomber struck a mosque in Pakistan.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-pakistan-peshawar_6040758.jpg?20230130110825",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-pakistan-peshawar_6040758.jpg?20230130110825"
+            },
+            "categories": []
+        },
+        {
+            "title": "Girl, 5, miraculously walks away after she is hit by car and sent crashing through window",
+            "pubDate": "2023-01-30 12:50:00",
+            "link": "https://news.sky.com/story/girl-5-miraculously-walks-away-after-she-is-hit-by-car-and-sent-crashing-through-front-window-of-driving-school-in-brazil-12799235",
+            "guid": "https://news.sky.com/story/girl-5-miraculously-walks-away-after-she-is-hit-by-car-and-sent-crashing-through-front-window-of-driving-school-in-brazil-12799235",
+            "author": "",
+            "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-brazil-girl-runaway-car_6040935.jpg?20230130130132",
+            "description": "CCTV has captured the moment a drunk driver hit a motorcyclist before ploughing into a five-year-old girl - who miraculously walked away from the crash.",
+            "content": "CCTV has captured the moment a drunk driver hit a motorcyclist before ploughing into a five-year-old girl - who miraculously walked away from the crash.",
+            "enclosure": {
+                "link": "https://e3.365dm.com/23/01/70x70/skynews-brazil-girl-runaway-car_6040935.jpg?20230130130132",
+                "type": "image/jpeg",
+                "thumbnail": "https://e3.365dm.com/23/01/70x70/skynews-brazil-girl-runaway-car_6040935.jpg?20230130130132"
+            },
+            "categories": []
+        }
+    ]
+}
