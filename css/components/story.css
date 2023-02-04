@@ -46,6 +46,7 @@
 .story-headline {
   font-size: var(--size);
   font-weight: bold;
+  line-height: normal;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -126,6 +127,21 @@
   display: grid;
   gap: 0.5em;
   line-height: 1.1;
+}
+
+.list a {
+  padding-left: 1.2em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.list a:before {
+  content: "•";
+  width: 1.2em;
+  text-align: center;
+  color: inherit;
+  position: absolute;
+  left: 0;
 }
 
 @media (hover:hover) {
