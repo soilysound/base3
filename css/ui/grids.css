@@ -1,4 +1,5 @@
-.grid-flex {
+/* auto wrapping flexible grids for 2 column uneven layouts */
+.ui-grid-flex {
   --basis: 0;
   --gap: var(--gap-500);
   --wrap: wrap;
@@ -15,7 +16,7 @@
   gap: var(--gap);
 }
 
-.grid-flex>* {
+.ui-grid-flex>* {
   flex-grow: var(--grow);
   flex-shrink: 1;
   flex-basis: calc(var(--basis));
@@ -24,18 +25,19 @@
   align-items: var(--align-children);
 }
 
-.grid-flex>*:only-child {
+.ui-grid-flex>*:only-child {
   flex-basis: var(--basis);
 }
 
 /* HACK FOR < IOS/SAFARI 14.5, which doesnt support the gap property in flexbox */
 @supports not ((display: full-size-kana) or (translate: 10px) or (content-visibility: auto)) {
-  .grid-flex>* {
+  .ui-grid-flex>* {
     margin: calc(var(--gap, 1em) / 2);
   }
 }
 
-.grid-auto {
+/* even width grid columns that auto wrap */
+.ui-grid-auto {
   --basis: auto;
   --gap: var(--gap-400);
   --flow: none;
@@ -50,21 +52,21 @@
   height: 100%;
 }
 
-.grid-auto>.grid-cell {
+.ui-grid-auto>.ui-grid-cell {
   max-width: 100%;
 }
 
-.grid-auto>.grid-divider[class] {
+.ui-grid-auto>.ui-grid-divider[class] {
   grid-column: auto;
 }
 
-.grid-fixed {
+/* complex grid layouts with multiple columns and specified break points */
+.ui-grid-fixed {
   --gap: var(--gap-400);
   --cols: repeat(12, 1fr 1px);
-  --align: stretch;
   --divider-color: var(--border-color);
   --divider-width: 1px;
-  --divider-height: 100%;
+  --divider-height: auto;
   --cell1: 1/7;
   --cell2: 7/13;
   --cell3: 13/19;
@@ -72,41 +74,75 @@
   display: grid;
   grid-template-columns: var(--cols);
   grid-template-rows: auto;
-  align-items: var(--align);
+  grid-template-areas: var(--areas);
   gap: var(--gap);
 }
 
-.grid-cell {
+.ui-grid-cell {
   container-type: inline-size;
 }
 
-.grid-fixed>.grid-cell:nth-of-type(1) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(1) {
   grid-column: var(--cell1);
+  grid-row: var(--cell1);
 }
 
-.grid-fixed>.grid-cell:nth-of-type(2) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(2) {
   grid-column: var(--cell2);
+  grid-row: var(--cell2);
 }
 
-.grid-fixed>.grid-cell:nth-of-type(3) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(3) {
   grid-column: var(--cell3);
+  grid-row: var(--cell3);
 }
 
-.grid-fixed>.grid-cell:nth-of-type(4) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(4) {
   grid-column: var(--cell4);
+  grid-row: var(--cell4);
 }
 
-.grid-divider {
+/* add ui-grid-areas if you want to enable grid areas option */
+.ui-grid-areas[class] {
+  --cell1: cell1;
+  --cell2: cell2;
+  --cell3: cell3;
+  --cell4: cell4;
+  --areas: "cell1 cell2 cell3 cell4";
+}
+
+.ui-grid-fixed:not(.ui-grid-areas) > .ui-grid-cell[class] {
+  grid-row: auto;
+}
+
+.ui-grid-divider {
   background: var(--divider-color);
   height: var(--divider-height);
   width: var(--divider-width);
-  align-self: center;
 }
 
-.grid-divider:nth-of-type(1) {
+.ui-grid-divider:nth-of-type(1) {
   grid-column: var(--div1);
 }
 
-.grid-divider:nth-of-type(2) {
+.ui-grid-divider:nth-of-type(2) {
   grid-column: var(--div2);
+}
+
+@media all and (max-width: 767px) {
+  .ui-grid-areas {
+    grid-template-areas: var(--areas-m, var(--areas));
+  }
+}
+
+@media all and (max-width: 480px) {
+  .ui-grid-areas {
+    grid-template-areas: var(--areas-s, var(--areas-m, var(--areas)));
+  }
+}
+
+@media all and (max-width: 360px) {
+  .ui-grid-areas {
+    grid-template-areas: var(--areas-xs, var(--areas-s, var(--areas-m, var(--areas))));
+  }
 }
