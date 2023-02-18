@@ -61,7 +61,8 @@
 }
 
 /* complex grid layouts with multiple columns and specified break points */
-.ui-grid-fixed {
+.ui-grid-fixed,
+.ui-grid-areas {
   --gap: var(--gap-400);
   --cols: repeat(12, 1fr 1px);
   --divider-color: var(--border-color);
@@ -84,35 +85,18 @@
 
 .ui-grid-fixed>.ui-grid-cell:nth-of-type(1) {
   grid-column: var(--cell1);
-  grid-row: var(--cell1);
 }
 
 .ui-grid-fixed>.ui-grid-cell:nth-of-type(2) {
   grid-column: var(--cell2);
-  grid-row: var(--cell2);
 }
 
 .ui-grid-fixed>.ui-grid-cell:nth-of-type(3) {
   grid-column: var(--cell3);
-  grid-row: var(--cell3);
 }
 
 .ui-grid-fixed>.ui-grid-cell:nth-of-type(4) {
   grid-column: var(--cell4);
-  grid-row: var(--cell4);
-}
-
-/* add ui-grid-areas if you want to enable grid areas option */
-.ui-grid-areas[class] {
-  --cell1: cell1;
-  --cell2: cell2;
-  --cell3: cell3;
-  --cell4: cell4;
-  --areas: "cell1 cell2 cell3 cell4";
-}
-
-.ui-grid-fixed:not(.ui-grid-areas) > .ui-grid-cell[class] {
-  grid-row: auto;
 }
 
 .ui-grid-divider {
@@ -127,6 +111,32 @@
 
 .ui-grid-divider:nth-of-type(2) {
   grid-column: var(--div2);
+}
+
+/* complex layouts using grid areas and fixed breakpoints */
+/* add ui-grid-areas if you want to enable grid areas option */
+.ui-grid-areas[class] {
+  --cell1: cell1;
+  --cell2: cell2;
+  --cell3: cell3;
+  --cell4: cell4;
+  --areas: "cell1 cell2 cell3 cell4";
+}
+
+.ui-grid-areas>.ui-grid-cell:nth-of-type(1) {
+  grid-area: var(--cell1);
+}
+
+.ui-grid-areas>.ui-grid-cell:nth-of-type(2) {
+  grid-area: var(--cell2);
+}
+
+.ui-grid-areas>.ui-grid-cell:nth-of-type(3) {
+  grid-area: var(--cell3);
+}
+
+.ui-grid-areas>.ui-grid-cell:nth-of-type(4) {
+  grid-area: var(--cell4);
 }
 
 @media all and (max-width: 767px) {
