@@ -93,9 +93,9 @@
 <body>
   <br>
   <br>
-  <div class="wrap wrap-site-width wrap-gutter">
+  <div class="ui-wrap ui-wrap-site-width ui-wrap-gutter">
     <div class="ui-grid-fixed" data-pattern="3/1-with-divider">
-      <div class="ui-grid-cell wrap" style="--gap: var(--gap-400)">
+      <div class="ui-grid-cell ui-wrap" style="--gap: var(--gap-400)">
         <h2 class="header">Latest News</h2>
         <div class="ui-grid-fixed" data-pattern="3/1">
           <div class="ui-grid-cell">
@@ -179,7 +179,7 @@
         </div>
       </div>
       <span class="ui-grid-divider"></span>
-      <div class="ui-grid-cell wrap" style="--gap: var(--gap-400); --rows: min-content 1fr">
+      <div class="ui-grid-cell ui-wrap" style="--gap: var(--gap-400); --rows: min-content 1fr">
         <h2 class="header">Most read</h2>
         <div class="ui-grid-fixed" data-pattern="1/1/1/1-with-divider">
           <article class="ui-grid-cell story">
@@ -244,6 +244,11 @@
 
   <br>
   <br>
+  <div class="ui-wrap ui-wrap-site-width ui-wrap-gutter ui-grid-areas" style="--cols: 1fr 250px; --areas: 'cell1 cell2' 'cell3 cell3'; --areas-m: 'cell1 cell1' 'cell3 cell3' 'cell2 cell2'">
+    <div class="ui-grid-cell">main</div>
+    <div class="ui-grid-cell">live</div>
+    <div class="ui-grid-cell">rail</div>
+  </div>
   <br>
 </body>
 
