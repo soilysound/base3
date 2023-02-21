@@ -3,7 +3,7 @@
 @import './core/site.css';
 
 @import './ui/fonts.css';
-@import './ui/flex-wrap.css';
+@import './ui/wrap.css';
 @import './ui/grids.css';
 @import './ui/gaps.css';
 @import './ui/typeography.css';

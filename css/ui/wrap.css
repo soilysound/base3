@@ -24,12 +24,13 @@
   padding-right: var(--gutter);
 }
 
-.ui-wrap-gutter-collapse {
+/* @NOTE - sass does not like this */
+/* .ui-wrap-gutter-collapse {
   --gutter-collapse: var(--site-width-s);
   position: relative;
-  margin-left: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
-  margin-right: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
-}
+  margin-left: max(calc(var(--gutter) * -1), min(0px, calc((100vw - var(--gutter-collapse)) * 9999)));
+  margin-right: max(calc(var(--gutter) * -1), min(0px, calc((100vw - var(--gutter-collapse)) * 9999)));
+} */
 
 .ui-wrap-full-width {
   min-width: 100vw;

@@ -20,7 +20,7 @@
   flex-grow: var(--grow);
   flex-shrink: 1;
   flex-basis: calc(var(--basis));
-  min-width: clamp(var(--min-width, 0px), (var(--collapse) - 100%) * 999, 100% - var(--gap));
+  min-width: clamp(var(--min-width, 0px), calc((var(--collapse) - 100%) * 999), calc(100% - var(--gap)));
   display: grid;
   align-items: var(--align-children);
 }
