@@ -1,15 +1,15 @@
 @import './core/vars.css';
 @import './core/reset.css';
 @import './core/site.css';
+@import './core/fonts.css';
+@import './core/wrap.css';
+@import './core/grids.css';
+@import './core/gaps.css';
+@import './core/typeography.css';
 
-@import './ui/fonts.css';
-@import './ui/wrap.css';
-@import './ui/grids.css';
-@import './ui/gaps.css';
-@import './ui/typeography.css';
 @import './ui/buttons.css';
-
-@import './components/story.css';
+@import './ui/story.css';
+@import './ui/lists.css';
 
 @import './theme/dark-mode.css'
 all and (prefers-color-scheme: dark);

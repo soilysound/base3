@@ -1,0 +1,28 @@
+.ui-list {
+  display: grid;
+  gap: 0.5em;
+  line-height: 1.1;
+}
+
+.ui-list a {
+  padding-left: 1.2em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.ui-list a:before {
+  content: "•";
+  width: 1.2em;
+  text-align: center;
+  color: inherit;
+  position: absolute;
+  left: 0;
+}
+
+@media (hover:hover) {
+  .ui-list a:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 2px;
+  }
+}

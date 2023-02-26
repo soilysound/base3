@@ -99,7 +99,7 @@
   /* brand fonts */
   --brand-font: 'Sky Text', sans-serif;
 }
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+*:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *) {
   all: unset;
   display: revert;
   outline: revert;
@@ -168,7 +168,7 @@ a {
   font-weight: bold;
   font-display: fallback;
 }
-.wrap {
+.ui-wrap {
   --gap: var(--gap-600);
   --width: 100%;
   --align: start;
@@ -183,27 +183,29 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-.wrap-site-width {
+.ui-wrap-site-width {
   --width: var(--site-width);
 }
-.wrap-gutter {
+.ui-wrap-gutter {
   --gutter: var(--site-gutter);
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
-.wrap-gutter-collapse {
+/* @NOTE - sass does not like this */
+/* .ui-wrap-gutter-collapse {
   --gutter-collapse: var(--site-width-s);
   position: relative;
-  margin-left: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
-  margin-right: max(var(--gutter) * -1, min(0px, (100vw - var(--gutter-collapse)) * 9999));
-}
-.wrap-full-width {
+  margin-left: max(calc(var(--gutter) * -1), min(0px, calc((100vw - var(--gutter-collapse)) * 9999)));
+  margin-right: max(calc(var(--gutter) * -1), min(0px, calc((100vw - var(--gutter-collapse)) * 9999)));
+} */
+.ui-wrap-full-width {
   min-width: 100vw;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
-.grid-flex {
+/* auto wrapping flexible grids for 2 column uneven layouts */
+.ui-grid-flex {
   --basis: 0;
   --gap: var(--gap-500);
   --wrap: wrap;
@@ -219,24 +221,25 @@ a {
   justify-items: var(--justify);
   gap: var(--gap);
 }
-.grid-flex>* {
+.ui-grid-flex>* {
   flex-grow: var(--grow);
   flex-shrink: 1;
   flex-basis: calc(var(--basis));
-  min-width: clamp(var(--min-width, 0px), (var(--collapse) - 100%) * 999, 100% - var(--gap));
+  min-width: max(var(--min-width, 0px), min(calc((var(--collapse) - 100%) * 999), calc(100% - var(--gap))));
   display: grid;
   align-items: var(--align-children);
 }
-.grid-flex>*:only-child {
+.ui-grid-flex>*:only-child {
   flex-basis: var(--basis);
 }
 /* HACK FOR < IOS/SAFARI 14.5, which doesnt support the gap property in flexbox */
 @supports not ((display: full-size-kana) or (translate: 10px) or (content-visibility: auto)) {
-  .grid-flex>* {
+  .ui-grid-flex>* {
     margin: calc(var(--gap, 1em) / 2);
   }
 }
-.grid-auto {
+/* even width grid columns that auto wrap */
+.ui-grid-auto {
   --basis: auto;
   --gap: var(--gap-400);
   --flow: none;
@@ -250,19 +253,20 @@ a {
   grid-auto-flow: var(--flow);
   height: 100%;
 }
-.grid-auto>.grid-cell {
+.ui-grid-auto>.ui-grid-cell {
   max-width: 100%;
 }
-.grid-auto>.grid-divider[class] {
+.ui-grid-auto>.ui-grid-divider[class] {
   grid-column: auto;
 }
-.grid-fixed {
+/* complex grid layouts with multiple columns and specified break points */
+.ui-grid-fixed,
+.ui-grid-areas {
   --gap: var(--gap-400);
   --cols: repeat(12, 1fr 1px);
-  --align: stretch;
   --divider-color: var(--border-color);
   --divider-width: 1px;
-  --divider-height: 100%;
+  --divider-height: auto;
   --cell1: 1/7;
   --cell2: 7/13;
   --cell3: 13/19;
@@ -270,81 +274,88 @@ a {
   display: grid;
   grid-template-columns: var(--cols);
   grid-template-rows: auto;
-  align-items: var(--align);
+  grid-template-areas: var(--areas);
   gap: var(--gap);
 }
-.grid-cell {
+.ui-grid-cell {
   container-type: inline-size;
 }
-.grid-fixed>.grid-cell:nth-of-type(1) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(1) {
   grid-column: var(--cell1);
 }
-.grid-fixed>.grid-cell:nth-of-type(2) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(2) {
   grid-column: var(--cell2);
 }
-.grid-fixed>.grid-cell:nth-of-type(3) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(3) {
   grid-column: var(--cell3);
 }
-.grid-fixed>.grid-cell:nth-of-type(4) {
+.ui-grid-fixed>.ui-grid-cell:nth-of-type(4) {
   grid-column: var(--cell4);
 }
-.grid-divider {
+.ui-grid-divider {
   background: var(--divider-color);
   height: var(--divider-height);
   width: var(--divider-width);
 }
-.grid-divider:nth-of-type(1) {
+.ui-grid-divider:nth-of-type(1) {
   grid-column: var(--div1);
 }
-.grid-divider:nth-of-type(2) {
+.ui-grid-divider:nth-of-type(2) {
   grid-column: var(--div2);
 }
-.gap-0 {
-  --gap: 0;
+/* complex layouts using grid areas and fixed breakpoints */
+/* add ui-grid-areas if you want to enable grid areas option */
+.ui-grid-areas[class] {
+  --cell1: cell1;
+  --cell2: cell2;
+  --cell3: cell3;
+  --cell4: cell4;
+  --areas: "cell1 cell2 cell3 cell4";
 }
-.gap-100 {
-  --gap: var(--gap-100);
-  --collapse: var(--gap-100)
+.ui-grid-areas>.ui-grid-cell:nth-of-type(1) {
+  grid-area: var(--cell1);
 }
-.gap-200 {
-  --gap: var(--gap-200);
-  --collapse: var(--gap-200)
+.ui-grid-areas>.ui-grid-cell:nth-of-type(2) {
+  grid-area: var(--cell2);
 }
-.gap-300 {
-  --gap: var(--gap-300);
-  --collapse: var(--gap-300)
+.ui-grid-areas>.ui-grid-cell:nth-of-type(3) {
+  grid-area: var(--cell3);
 }
-.gap-400 {
-  --gap: var(--gap-400);
-  --collapse: var(--gap-400)
+.ui-grid-areas>.ui-grid-cell:nth-of-type(4) {
+  grid-area: var(--cell4);
 }
-.gap-500 {
-  --gap: var(--gap-500);
-  --collapse: var(--gap-500)
+@media all and (max-width: 767px) {
+  .ui-grid-areas {
+    grid-template-areas: var(--areas-m, var(--areas));
+  }
 }
-.gap-600 {
-  --gap: var(--gap-600);
-  --collapse: var(--gap-600)
+@media all and (max-width: 480px) {
+  .ui-grid-areas {
+    grid-template-areas: var(--areas-s, var(--areas-m, var(--areas)));
+  }
 }
-.gap-700 {
-  --gap: var(--gap-700);
-  --collapse: var(--gap-700)
+@media all and (max-width: 360px) {
+  .ui-grid-areas {
+    grid-template-areas: var(--areas-xs, var(--areas-s, var(--areas-m, var(--areas))));
+  }
 }
-.gap-800 {
-  --gap: var(--gap-800);
-  --collapse: var(--gap-800)
-}
-.gap-900 {
-  --gap: var(--gap-900);
-  --collapse: var(--gap-900)
-}
-.gap-any {
+.gap-0 { --gap: 0; }
+.gap-100 { --gap: var(--gap-100); --collapse: var(--gap-100) }
+.gap-200 { --gap: var(--gap-200); --collapse: var(--gap-200) }
+.gap-300 { --gap: var(--gap-300); --collapse: var(--gap-300) }
+.gap-400 { --gap: var(--gap-400); --collapse: var(--gap-400) }
+.gap-500 { --gap: var(--gap-500); --collapse: var(--gap-500) }
+.gap-600 { --gap: var(--gap-600); --collapse: var(--gap-600) }
+.gap-700 { --gap: var(--gap-700); --collapse: var(--gap-700) }
+.gap-800 { --gap: var(--gap-800); --collapse: var(--gap-800) }
+.gap-900 { --gap: var(--gap-900); --collapse: var(--gap-900) }
+.gap-any { 
   /* pass any (unitless) to and from value for arbitrary gap scaling */
   --gap-from-px: calc(var(--gap-from) * 1px);
   --gap-to-px: calc(var(--gap-to) * 1px);
   --gap-diff: calc(var(--gap-to) - var(--gap-from));
   gap: var(--gap-200);
-  gap: max(var(--gap-from-px), min(var(--gap-from-px) + (var(--gap-diff) * var(--scaler)), var(--gap-to-px)));
+  gap: max(var(--gap-from-px), min(calc(var(--gap-from-px) + calc(var(--gap-diff) * var(--scaler))), var(--gap-to-px)));
 }
 .collapse-top {
   --collapse: inherit !important;
@@ -354,43 +365,43 @@ a {
   --collapse: inherit !important;
   margin-bottom: calc(var(--collapse) * -1);
 }
-.display-50 {
-  font-size: var(--display-50);
-  line-height: var(--line-height-50)
+.display-50 { 
+  font-size: var(--display-50); 
+  line-height: var(--line-height-50) 
 }
-.display-100 {
+.display-100 { 
   font-size: var(--display-100);
   line-height: var(--line-height-100)
 }
-.display-200 {
+.display-200 { 
   font-size: var(--display-200);
   line-height: var(--line-height-200)
 }
-.display-300 {
+.display-300 { 
   font-size: var(--display-300);
   line-height: var(--line-height-300)
 }
-.display-400 {
+.display-400 { 
   font-size: var(--display-400);
   line-height: var(--line-height-400)
 }
-.display-500 {
+.display-500 { 
   font-size: var(--display-500);
   line-height: var(--line-height-500)
 }
-.display-600 {
+.display-600 { 
   font-size: var(--display-600);
   line-height: var(--line-height-600)
 }
-.display-700 {
+.display-700 { 
   font-size: var(--display-700);
   line-height: var(--line-height-700)
 }
-.display-800 {
+.display-800 { 
   font-size: var(--display-800);
   line-height: var(--line-height-800)
 }
-.display-900 {
+.display-900 { 
   font-size: var(--display-900);
   line-height: var(--line-height-900)
 }
@@ -403,7 +414,7 @@ a {
 .display-fixed-100 {
   font-size: var(--display-fixed-100);
 }
-.display-any {
+.display-any { 
   /* pass any (unitless) to and from value for arbitrary font scaling
     eg scale from 16 - 24px, use: 
     --size-from: 16; 
@@ -412,7 +423,7 @@ a {
   --size-from-px: calc(var(--size-from) * 1px);
   --size-to-px: calc(var(--size-to) * 1px);
   --size-diff: calc(var(--size-to) - var(--size-from));
-  font-size: max(var(--size-from-px), min(var(--size-from-px) + (var(--size-diff) * var(--scaler)), var(--size-to-px)));
+  font-size: max(var(--size-from-px), min(calc(var(--size-from-px) + (var(--size-diff) * var(--scaler))), var(--size-to-px)));
 }
 .button {
   --size: var(--display-200);
@@ -462,21 +473,25 @@ a {
   --border-radius: 2em;
 }
 .story {
-  --gap: 19px 14px;
+  --gap-block: 19px;
+  --gap-inline: 14px;
   --columns: 1fr;
   --aspect-ratio: 16/9;
-  --size: max(16px, min(6cqw, 20px));
+  --size: max(16px, min(7cqw, 20px));
   --align-body: center;
   container-type: inline-size;
   display: grid;
-  align-items: center;
+  align-items: start;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 .story-wrap[data-pattern*="hero"] {
-  --size: max(16px, min(7cqw, 28px));
+  --size: max(16px, min(8cqw, 28px));
 }
 .story-wrap {
   display: grid;
-  gap: var(--gap);
+  gap: var(--gap-block) var(--gap-inline);
   grid-template-columns: var(--columns);
 }
 .story-media {
@@ -494,21 +509,43 @@ a {
   display: grid;
   align-content: center;
   container-type: inline-size;
-  gap: 7px;
+  gap: calc(var(--gap-inline) / 2);
 }
-.story-body h2 {
+.story-headline {
   font-size: var(--size);
   font-weight: bold;
+  line-height: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
-.story-links:empty {
-  display: none;
+.story-headline a {
+  color: inherit;
+}
+.story-headline a:after {
+  content: "";
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 200%;
+  z-index: 0;
+}
+@media (hover:hover) {
+  .story-headline a:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 2px;
+  }
 }
 .story-wrap[data-pattern="row"] {
   --columns: 33.333% 1fr;
   --aspect-ratio: 1/1;
 }
-@container (min-width: 304px) and (max-width: 400px) {
-  .story-wrap[data-pattern="col-to-row"] {
+@container (min-width: 300px) and (max-width: 400px) {
+  .story[data-pattern="col-to-row"] .story-wrap {
     --columns: 33.333% 1fr;
     --aspect-ratio: 1/1;
   }
@@ -519,26 +556,62 @@ a {
   gap: 8px;
   line-height: 1;
   width: fit-content;
+  position: relative;
+  z-index: 1;
 }
 .story-tag,
 .story-label {
   font-size: 13px;
   font-weight: bold;
-  padding: 3px 4px;
+  padding: 2px 4px;
   text-decoration: none;
 }
 .story-tag {
   text-transform: uppercase;
-  background: #aaa;
-  color: white;
+  background: #ffcc00;
+  color: black;
 }
 .story-label {
   padding: 2px 1px;
+}
+.story-links {
+  position: relative;
+  z-index: 1;
+  padding: var(--gap-inline) 0;
+}
+.story-links:empty {
+  display: none;
+}
+.list {
+  display: grid;
+  gap: 0.5em;
+  line-height: 1.1;
+}
+.list a {
+  padding-left: 1.2em;
+  font-weight: bold;
+  display: inline-block;
+}
+.list a:before {
+  content: "•";
+  width: 1.2em;
+  text-align: center;
+  color: inherit;
+  position: absolute;
+  left: 0;
+}
+@media (hover:hover) {
+  .list a:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 2px;
+  }
 }
 @media all and (prefers-color-scheme: dark) {
 
 :root {
   --text-color: var(--shade-100);
   --page-canvas: var(--shade-900);
+  --link-color: #65b7f7;
 }
 }

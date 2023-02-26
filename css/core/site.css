@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
 }
 
-a {
+html a {
   color: var(--link-color);
 }
 
