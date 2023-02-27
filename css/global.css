@@ -1,3 +1,4 @@
+@import './legacy/vars.css';
 @import './core/vars.css';
 @import './core/reset.css';
 @import './core/site.css';

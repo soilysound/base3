@@ -1,101 +1,65 @@
 :root {
-  /* fonts */
-  --base-font-size: 1rem;
-  /* https: //royalfig.github.io/fluid-typography-calculator/ 
-    fonts scale between 400 and 896px
-  */
-  /* 14px */
-  --display-100: 0.875rem;
-  /* 16px */
-  --display-200: 1rem;
-  /* 16-18px */
-  --display-300: clamp(1rem, (0.8991935483870968rem + 0.4032258064516129vw), 1.125rem);
-  /* 18-20 */
-  --display-400: clamp(1.125rem, (1.0241935483870968rem + 0.4032258064516129vw), 1.25rem);
-  /* 20-24 */
-  --display-500: clamp(1.25rem, (1.0483870967741935rem + 0.8064516129032258vw), 1.5rem);
-  /* 24-30 */
-  --display-600: clamp(1.5rem, (1.1975806451612903rem + 1.2096774193548387vw), 1.875rem);
-  /* 30-40 */
-  --display-700: clamp(1.875rem, (1.370967741935484rem + 2.0161290322580645vw), 2.5rem);
-  /* 40-52 */
-  --display-800: clamp(2.5rem, (1.8951612903225805rem + 2.4193548387096775vw), 3.25rem);
-  /* 52-70 */
-  --display-900: clamp(3.25rem, (2.342741935483871rem + 3.6290322580645156vw), 4.375rem);
-
+  /* min and max width (px) for scaling values */
+  --scaler-from: 420;
+  --scaler-to: 980;
+  --scaler: calc((100vw - (var(--scaler-from) * 1px)) / (var(--scaler-to) - var(--scaler-from)));
+  /* raw size values */
+  --s-5: 4;
+  --s-10: 8;
+  --s-20: 12;
+  --s-25: 13;
+  --s-50: 14;
+  --s-100: 16;
+  --s-200: 18;
+  --s-300: 20;
+  --s-400: 22;
+  --s-500: 24;
+  --s-600: 26;
+  --s-700: 28;
+  --s-800: 32;
+  --s-900: 36;
+  --s-1000: 40;
+  --s-1100: 48;
+  --s-1200: 68;
+   /* spacing */
+  --gap-0: 0;
+  --gap-100: clamp(4px, calc(4px + (4 * var(--scaler))), 8px);
+  --gap-200: clamp(8px, calc(8px + (4 * var(--scaler))), 12px);
+  --gap-300: clamp(12px, calc(12px + (4 * var(--scaler))), 16px);
+  --gap-400: clamp(18px, calc(18px + (6 * var(--scaler))), 24px);
+  --gap-500: clamp(22px, calc(22px + (10 * var(--scaler))), 32px);
+  --gap-600: clamp(28px, calc(28px + (12 * var(--scaler))), 40px);
+  --gap-700: clamp(36px, calc(36px + (16 * var(--scaler))), 52px);
+  --gap-800: clamp(48px, calc(48px + (24 * var(--scaler))), 72px);
+  --gap-900: clamp(64px, calc(64px + (28 * var(--scaler))), 92px);
+  /* font sizes */
+  --display-25: clamp(13px, calc(13px + (1 * var(--scaler))), 14px);
+  --display-50: clamp(14px, calc(14px + (2 * var(--scaler))), 16px);
+  --display-100: clamp(16px, calc(16px + (2 * var(--scaler))), 18px);
+  --display-200: clamp(18px, calc(18px + (2 * var(--scaler))), 20px);
+  --display-300: clamp(20px, calc(20px + (2 * var(--scaler))), 22px);
+  --display-400: clamp(22px, calc(22px + (2 * var(--scaler))), 24px);
+  --display-500: clamp(24px, calc(24px + (6 * var(--scaler))), 30px);
+  --display-600: clamp(26px, calc(26px + (10 * var(--scaler))), 36px);
+  --display-700: clamp(28px, calc(28px + (12 * var(--scaler))), 40px);
+  --display-800: clamp(32px, calc(32px + (16 * var(--scaler))), 48px);
+  --display-900: clamp(36px, calc(36px + (32 * var(--scaler))), 68px); 
+  --base-font-size: 18px;
+  --display-fixed-25: 13px;
+  --display-fixed-50: 14px;
+  --display-fixed-100: 16px;
+  --display-fixed-200: 18px;
+  --display-fixed-300: 20px;
+  --display-fixed-400: 22px;
   /* line heights */
-  --line-height-100: 1.4;
-  --line-height-200: 1.4;
-  --line-height-300: 1.3;
-  --line-height-400: 1.3;
-  --line-height-500: 1.2;
-  --line-height-600: 1.2;
+  --line-height-50: 1.2;
+  --line-height-100: 1.25;
+  --line-height-200: 1.25;
+  --line-height-300: 1.2;
+  --line-height-400: 1.2;
+  --line-height-500: 1.1;
+  --line-height-600: 1.1;
   --line-height-700: 1.1;
-  --line-height-800: 1;
-  --line-height-900: 0.9;
-  /* spacing */
-  --gap-100: clamp(0.25rem, (0.04838709677419356rem + 0.8064516129032258vw), 0.5rem);
-  --gap-200: clamp(0.5rem, (0.29838709677419356rem + 0.8064516129032258vw), 0.75rem);
-  --gap-300: clamp(0.75rem, (0.5483870967741935rem + 0.8064516129032258vw), 1rem);
-  --gap-400: clamp(1rem, (0.5967741935483871rem + 1.6129032258064515vw), 1.5rem);
-  --gap-500: clamp(1.5rem, (1.1975806451612903rem + 1.2096774193548387vw), 1.875rem);
-  --gap-600: clamp(1.875rem, (1.370967741935484rem + 2.0161290322580645vw), 2.5rem);
-  --gap-700: clamp(2.5rem, (1.8951612903225805rem + 2.4193548387096775vw), 3.25rem);
-  --gap-800: clamp(3.25rem, (2.342741935483871rem + 3.6290322580645156vw), 4.375rem);
-  --gap-900: clamp(4.375rem, (3.366935483870968rem + 4.032258064516129vw), 5.625rem);
-  /* layout */
-  --site-width-l: 1200px;
-  --site-width: 1024px;
-  --site-width-m: 767px;
-  --site-width-s: 480px;
-  --site-width-xs: 360px;
-  --site-gutter: 1rem;
-
-  /* layers */
-  --layer-below: -1;
-  --layer-base: 0;
-  --layer-ui: 9;
-  --layer-overlay: 99;
-  --layer-top: 99999999999999999999999999;
-
-  /* colors */
-  /* shades */
-  --shade-100: hsl(0, 0%, 100%);
-  --shade-200: hsl(0, 0%, 87.5%);
-  --shade-300: hsl(0, 0%, 75%);
-  --shade-400: hsl(0, 0%, 62.5%);
-  --shade-500: hsl(0, 0%, 50%);
-  --shade-600: hsl(0, 0%, 37.5%);
-  --shade-700: hsl(0, 0%, 25%);
-  --shade-800: hsl(0, 0%, 12.5%);
-  --shade-900: hsl(0, 0%, 0%);
-  /* utility */
-  --warning: orange;
-  --alert: red;
-  --breaking: yellow;
-  --breaking-text: black;
-  --success: green;
-  --link-color: #3157A1;
-  /* opacity */
-  --black-op-75: hsla(0, 0, 0, 70%);
-  --black-op-50: hsla(0, 0, 0, 50%);
-  --black-op-25: hsla(0, 0, 0, 25%);
-
-  /* theme */
-  /* general colors */
-  --text-color: var(--shade-900);
-  --text-color-secondary: var(--shade-700);
-  --text-color-tertiary: var(--shade-700);
-  --page-canvas: var(--shade-100);
-  --page-canvas-shade: var(--shade-200);
-  --component-canvas: var(--shade-100);
-  --component-shade: var(--shade-300);
-  --border-color: var(--shade-300);
-  --border-color-strong: var(--shade-700);
-  /* brand colors */
-  --brand-primary: hotpink;
-  --brand-secondry: yellowgreen;
-  --brand-highlight: lightblue;
-  /* brand fonts */
-  --brand-font: 'Sky Text', sans-serif;
+  --line-height-800: 1.1;
+  --line-height-900: 1;
 }
