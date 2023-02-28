@@ -60,6 +60,10 @@
   font-size: var(--display-fixed-100);
 }
 
+.display-fixed-200 {
+  font-size: var(--display-fixed-200);
+}
+
 .display-any { 
   /* pass any (unitless) to and from value for arbitrary font scaling
     eg scale from 16 - 24px, use: 

@@ -33,6 +33,7 @@
   --gap-800: clamp(48px, calc(48px + (24 * var(--scaler))), 72px);
   --gap-900: clamp(64px, calc(64px + (28 * var(--scaler))), 92px);
   /* font sizes */
+  --base-font-size: 18px;
   --display-25: clamp(13px, calc(13px + (1 * var(--scaler))), 14px);
   --display-50: clamp(14px, calc(14px + (2 * var(--scaler))), 16px);
   --display-100: clamp(16px, calc(16px + (2 * var(--scaler))), 18px);
@@ -44,13 +45,10 @@
   --display-700: clamp(28px, calc(28px + (12 * var(--scaler))), 40px);
   --display-800: clamp(32px, calc(32px + (16 * var(--scaler))), 48px);
   --display-900: clamp(36px, calc(36px + (32 * var(--scaler))), 68px); 
-  --base-font-size: 18px;
   --display-fixed-25: 13px;
   --display-fixed-50: 14px;
   --display-fixed-100: 16px;
   --display-fixed-200: 18px;
-  --display-fixed-300: 20px;
-  --display-fixed-400: 22px;
   /* line heights */
   --line-height-50: 1.2;
   --line-height-100: 1.25;
@@ -62,4 +60,5 @@
   --line-height-700: 1.1;
   --line-height-800: 1.1;
   --line-height-900: 1;
+  /* layout */
 }

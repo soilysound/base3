@@ -12,5 +12,6 @@
 @import './ui/story.css';
 @import './ui/lists.css';
 
+@import './theme/base.css';
 @import './theme/dark-mode.css'
 all and (prefers-color-scheme: dark);

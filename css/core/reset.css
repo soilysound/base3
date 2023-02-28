@@ -2,6 +2,7 @@
   all: unset;
   display: revert;
   outline: revert;
+  font-weight: revert;
   box-sizing: border-box;
 }
 

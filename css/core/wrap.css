@@ -3,6 +3,7 @@
   --width: 100%;
   --align: start;
   --rows: auto;
+  --margin-inline: ;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: var(--rows);
@@ -10,12 +11,16 @@
   width: 100%;
   max-width: var(--width);
   gap: var(--gap);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: var(--margin-inline);
+  margin-right: var(--margin-inline);
 }
 
 .wrap-site-width {
   --width: var(--site-width);
+}
+
+.wrap-auto-align {
+  --margin-inline: auto;
 }
 
 .wrap-gutter {

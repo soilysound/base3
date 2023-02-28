@@ -1,6 +1,6 @@
 /* auto wrapping flexible grids for 2 column uneven layouts */
 .grid-flex {
-  --basis: 0;
+  --basis: 0%;
   --gap: var(--gap-500);
   --wrap: wrap;
   --grow: 1;
@@ -42,9 +42,11 @@
   --gap: var(--gap-400);
   --flow: none;
   --align: stretch;
+  --justify: stretch;
   --rows: auto;
   display: grid;
   align-items: var(--align);
+  justify-items: var(--justify);
   gap: var(--gap);
   grid-template-columns: repeat(auto-fit, minmax(var(--basis), 1fr));
   grid-template-rows: auto;
@@ -155,4 +157,13 @@
   .grid-areas {
     grid-template-areas: var(--areas-xs, var(--areas-s, var(--areas-m, var(--areas))));
   }
+}
+
+/* Adds pink cols and border for debugging grid layouts */
+.debug > *:not(.grid-divider) {
+  background: pink;
+  border: 1px solid rgb(241, 152, 167);
+  text-align: center;
+  min-width: 50px;
+  padding: 0.5em 1px; 
 }
