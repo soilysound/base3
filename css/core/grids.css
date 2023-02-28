@@ -160,10 +160,10 @@
 }
 
 /* Adds pink cols and border for debugging grid layouts */
-.debug > *:not(.grid-divider) {
-  background: pink;
+.debug>*:not(.grid-divider) {
+  background: var(--debug);
   border: 1px solid rgb(241, 152, 167);
   text-align: center;
   min-width: 50px;
-  padding: 0.5em 1px; 
+  padding: 0.5em 1px;
 }
